@@ -58,7 +58,7 @@ bot.hears('/bot', async (ctx) => {
       
        ctx.reply( "Вы запустили Бота на стратегию «большие кэфы 8» ⚠ Не забудьте поставить особые уведомления на Бота, и ждите сигнала на валуйные ситуации!");
        ctx.reply( "Удачи! По всем вопросам пишите @BetgamesTV_Admin"); 
-       global.time= setInterval(request, 60000)  
+       global.time= setInterval(request, 120000)  
        }
 
 
