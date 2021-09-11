@@ -39,6 +39,7 @@ if (res2 == 1)
       let result2 = 0;
       let result3 = 0;
       let result4 = 0;
+      let result5 = 0;
       score_dealer = data.items.results[0].results.score_dealer
   
       for (let i = 0; i <= 19; i++) {
@@ -78,14 +79,23 @@ if (res2 == 1)
     for (let i = 0; i <= 29; i++) {
       score_dealer = data.items.results[i].results.score_dealer
       score_player = data.items.results[i].results.score_player
-      if ((score_player == 8) || (score_dealer == 8))
+      if (score_player == 8)
           result4 = result4 + 1;
       
   }
   console.log(result4);
   if (result4 == 0)
- {ctx.reply( 'Не было 8 у игрока уже 30 минут');}
+ {ctx.reply( 'Не было 8 у игрока уже 30 минут (вертикаль)');}
+ for (let i = 0; i <= 29; i++) {
+  score_dealer = data.items.results[i].results.score_dealer
+  score_player = data.items.results[i].results.score_player
+  if (score_dealer == 8)
+      result5 = result5 + 1;
+}
 
+console.log(result5);
+if (result5 == 0)
+{ctx.reply( 'Не было 8 у дилера уже 30 минут (вертикаль)');}
      for (let i = 0; i <= 29; i++) {
          score_dealer = data.items.results[i].results.score_dealer
          score_player = data.items.results[i].results.score_player
