@@ -23,7 +23,7 @@ bot.hears('/bot', async (ctx) => {
   for (let i = 0; i <= 1; i++) {
     score_dealer = data.items.results[i].results.score_dealer
     score_player = data.items.results[i].results.score_player
-    if ((score_player == 8 && score_dealer == 8)||(data.items.results[0].results.score_player == 8 &&data.items.results[i].results.score_player==8))
+    if ((score_player == 8 && score_dealer == 8)||(data.items.results[0].results.score_player == 8 &&data.items.results[1].results.score_dealer==8))
         res2 = res2 + 1; 
 }
 console.log(res);
