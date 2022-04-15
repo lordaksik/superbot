@@ -35,14 +35,19 @@ if (res2 == 1)
    async function request() {
       const response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-30-09/8/1/")
       const data = await response.json()
+      const response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-30-09/8/2/")
+      const data2 = await response2.json()
       let result = 0;
       let result2 = 0;
       let result3 = 0;
       let result4 = 0;
+     let result44 = 0;
       let result5 = 0;
+     let result55 = 0;
+     let result33 = 0;
       score_dealer = data.items.results[0].results.score_dealer
   
-      for (let i = 0; i <= 19; i++) {
+      for (let i = 0; i <= 29; i++) {
           score_dealer = data.items.results[i].results.score_dealer
           score_player = data.items.results[i].results.score_player
           // console.log("игрок " + score_player + " "+ score_dealer +" дилер")
@@ -53,9 +58,9 @@ if (res2 == 1)
       }
       console.log(result);
       if (result == 0)
-     { ctx.reply( 'Больших кэфов давно не было 20 минут');}
+     { ctx.reply( 'Больших кэфов давно не было 30 минут');}
      
-      for (let i = 0; i <= 19; i++) {
+      for (let i = 0; i <= 24; i++) {
          score_dealer = data.items.results[i].results.score_dealer
          score_player = data.items.results[i].results.score_player
          if ((score_player == 8) || (score_dealer == 8))
@@ -64,17 +69,7 @@ if (res2 == 1)
      }
      console.log(result2);
      if (result2 == 0)
-    {ctx.reply( 'Не было 8 уже 20 минут');}
-  for (let i = 0; i <= 19; i++) {
-         score_dealer = data.items.results[i].results.score_dealer
-         score_player = data.items.results[i].results.score_player
-         if ((score_player == 8) || (score_dealer == 8))
-             result2 = result2 + 1;
-         
-     }
-     console.log(result2);
-     if (result2 == 0)
-    {ctx.reply( 'Не было 8 уже 20 минут');}
+    {ctx.reply( 'Не было 8 уже 25 минут');}
 
     for (let i = 0; i <= 29; i++) {
       score_dealer = data.items.results[i].results.score_dealer
@@ -83,19 +78,31 @@ if (res2 == 1)
           result4 = result4 + 1;
       
   }
-  console.log(result4);
-  if (result4 == 0)
- {ctx.reply( 'Не было 8 у игрока уже 30 минут (вертикаль)');}
+      for (let i = 0; i <= 29; i++) {
+      score_dealer2 = data2.items.results[i].results.score_dealer
+      score_player2 = data2.items.results[i].results.score_player
+      if (score_player2 == 8)
+          result44 = result44 + 1;
+      
+  }
+  if (result44 === 0 && result4 === 0)
+ {ctx.reply( 'Не было 8 у игрока уже 60 минут (вертикаль)');}
  for (let i = 0; i <= 29; i++) {
   score_dealer = data.items.results[i].results.score_dealer
   score_player = data.items.results[i].results.score_player
   if (score_dealer == 8)
       result5 = result5 + 1;
 }
+ for (let i = 0; i <= 29; i++) {
+  score_dealer2 = data2.items.results[i].results.score_dealer
+  score_player2 = data2.items.results[i].results.score_player
+  if (score_dealer2 == 8)
+      result55 = result55 + 1;
+}
 
-console.log(result5);
-if (result5 == 0)
-{ctx.reply( 'Не было 8 у дилера уже 30 минут (вертикаль)');}
+
+if (result5 === 0&& result55 === 0)
+{ctx.reply( 'Не было 8 у дилера уже 60 минут (вертикаль)');}
      for (let i = 0; i <= 29; i++) {
          score_dealer = data.items.results[i].results.score_dealer
          score_player = data.items.results[i].results.score_player
@@ -103,9 +110,16 @@ if (result5 == 0)
          if (score_player == score_dealer)
              result3 = result3 + 1;
      }
-     console.log(result3);
-     if (result3 == 0)
-    { ctx.reply( 'Не было ничьи 30 минут');}
+     
+  for (let i = 0; i <= 29; i++) {
+         score_dealer2 = data2.items.results[i].results.score_dealer
+         score_player2 = data2.items.results[i].results.score_player
+ 
+         if (score_player2 == score_dealer2)
+             result33 = result33 + 1;
+     }
+     if (result3 == 0 && result33 == 0)
+    { ctx.reply( 'Не было ничьи 60 минут');}
     
   }
 
@@ -116,8 +130,7 @@ if (result5 == 0)
       
        ctx.reply( "Вы запустили Бота на стратегию «Большие кэфы» ⚠ Не забудьте поставить особые уведомления на Бота, и ждите сигнала на валуйные ситуации!");
        ctx.reply( "Удачи! По всем вопросам пишите @BetgamesTV_Admin"); 
-       global.time= setInterval(request, 120000)  
-       global.time2= setInterval(request2, 40000) 
+       global.time= setInterval(request, 120000)   
        }
 
 
