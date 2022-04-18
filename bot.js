@@ -7,30 +7,332 @@ console.log(ctx.message)})
 bot.help((ctx) => ctx.reply('Напиши /bot'))
 bot.hears('/bot', async (ctx) => {
   async function request2() {
-    const response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-30-09/8/1/")
-    const data = await response.json()
-    let res = 2;
-    let res2 = 0;
-    for (let i = 0; i <= 1; i++) {
-      score_dealer = data.items.results[i].results.score_dealer
-      score_player = data.items.results[i].results.score_player
-      if (score_player == score_dealer)
-          res = res - 1; 
-  }
-  console.log(res);
-  if (res == 0)
-  {ctx.reply( '2 ничьи подряд');}
-  for (let i = 0; i <= 1; i++) {
-    score_dealer = data.items.results[i].results.score_dealer
-    score_player = data.items.results[i].results.score_player
-    if ((score_player == 8 && score_dealer == 8)||(data.items.results[0].results.score_player == 8 &&data.items.results[1].results.score_dealer==8))
-        res2 = res2 + 1; 
-}
-console.log(res);
-if (res2 == 1)
-{ctx.reply( '8 в ряд');}
-
-
+     var now = new Date();
+    let res8=0;
+    var date= now.getHours()+':'+now.getMinutes();
+      //9:18   11.36 13.54    16.12   18.30   20.48   23.06
+ if(date==='9:0'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply( 'Конец шуза в 9:18')
+           ctx.reply( res8);
+    }
+    if(date==='11:18'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply( 'Конец шуза в 11:36')
+           ctx.reply( res8);
+    }
+    if(date==='13:36'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply( 'Конец шуза в 13:54')
+           ctx.reply(res8);
+    }
+    if(date==='15:54'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply( 'Конец шуза в 16:12')
+           ctx.reply( res8);
+    }
+    if(date==='18:12'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply( 'Конец шуза в 18:30')
+           ctx.reply(res8);
+    }
+    if(date==='20:30'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply( 'Конец шуза в 20:48')
+           ctx.reply( res8);
+    }
+    if(date==='22:48'){
+            response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/1/");
+            data = await response.json()
+            response2 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/2/");
+            data2 = await response2.json()
+            response3 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/3/");
+            data3 = await response3.json()
+            response4 = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-27-07/8/4/");
+            data4 = await response4.json()
+           for(i=0;i<30;i++){
+            score_dealer = data.items.results[i].results.score_dealer
+            score_player = data.items.results[i].results.score_player
+            score_dealer2 = data2.items.results[i].results.score_dealer
+            score_player2 = data2.items.results[i].results.score_player
+            score_dealer3 = data3.items.results[i].results.score_dealer
+            score_player3 = data3.items.results[i].results.score_player
+            score_dealer4 = data4.items.results[i].results.score_dealer
+            score_player4 = data4.items.results[i].results.score_player
+            if(score_dealer==='8'){
+                res8++;
+            }
+            if(score_player==='8'){
+                res8++;
+            }
+            if(score_dealer2==='8'){
+                res8++;
+            }
+            if(score_player2==='8'){
+                res8++;
+            }
+            if(score_dealer3==='8'){
+                res8++;
+            }
+            if(score_player3==='8'){
+                res8++;
+            }
+            if(score_dealer4==='8'){
+                res8++;
+            }
+            if(score_player4==='8'){
+                res8++;
+            }
+           }
+           ctx.reply('Конец шуза в 23:06');
+           ctx.reply(res8);
+    }
   }
    async function request() {
       const response = await fetch("https://betgames9.betgames.tv/web/v2/games/results/testpartner/en/0/2020-30-09/8/1/")
@@ -130,7 +432,8 @@ if (result5 === 0&& result55 === 0)
       
        ctx.reply( "Вы запустили Бота на стратегию «Большие кэфы» ⚠ Не забудьте поставить особые уведомления на Бота, и ждите сигнала на валуйные ситуации!");
        ctx.reply( "Удачи! По всем вопросам пишите @BetgamesTV_Admin"); 
-       global.time= setInterval(request, 120000)   
+       global.time= setInterval(request, 120000) 
+       global.time2= setInterval(request2, 40000) 
        }
 
 
